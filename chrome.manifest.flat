@@ -1,0 +1,4 @@
+content saucelauncher chrome/content/
+locale saucelauncher en-US chrome/locale/en-US/
+skin saucelauncher classic/1.0	chrome/skin/
+overlay chrome://browser/content/browser.xul chrome://saucelauncher/content/firefoxOverlay.xul

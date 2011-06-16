@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://saucelauncher/locale/saucelauncher.dtd">
+<overlay id="saucelauncherOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <menupopup id="viewSidebarMenu">
+    <menuitem key="key_opensaucelauncher" observes="viewsaucelauncher"  />
+  </menupopup>
+  
+  <keyset id="mainKeyset">
+    <key id="key_opensaucelauncher" command="viewsaucelauncher"
+         key="&opensaucelauncher.commandkey;" 
+         modifiers="&opensaucelauncher.modifierskey;" />
+  </keyset>
+  
+  <broadcasterset id="mainBroadcasterSet"> 
+    <broadcaster id="viewsaucelauncher" 
+                 label="&saucelauncher.title;"
+                 autoCheck="false"
+                 type="checkbox"
+                 group="sidebar"
+                 sidebarurl="chrome://saucelauncher/content/saucelauncher.xul"
+                 sidebartitle="&saucelauncher.title;"
+                 oncommand="toggleSidebar('viewsaucelauncher');" />
+  </broadcasterset>
+</overlay>
