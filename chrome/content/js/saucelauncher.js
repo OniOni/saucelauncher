@@ -1,5 +1,5 @@
-var sauceURL = "http://smcq.dev.saucelabs.com:5000";
-//var sauceURL = "http://www.saucelabs.com"
+//var sauceURL = "http://smcq.dev.saucelabs.com:5000";
+var sauceURL = "http://www.saucelabs.com";
 var prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 var lastURL = "";
 
