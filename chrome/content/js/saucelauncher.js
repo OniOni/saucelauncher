@@ -97,7 +97,7 @@ var saveValues = function() {
    sauceUsername(name);
    sauceAccessKey(key);
    var content = document.getElementById('sauceContent');
-   content.innerHTML = "<h2>Thanks "+name+"!</h2> You are all set to start Scouting. <a href='#' onclick='history.go(-1)'>Go back to my page.</a>";
+   content.innerHTML = "<h2>Thanks "+name+"!</h2> You are all set to start Scouting. <a style='color:blue;cursor:pointer' onclick='history.go(-1)'>Go back to my page.</a>";
  }
  else {
    document.getElementById('sauceEnterError').innerHTML = "*Please fill out both fields.";
@@ -155,7 +155,7 @@ var createAccount = function() {
           sauceAccessKey(key);
         
           var content = document.getElementById('sauceContent');
-          content.innerHTML = "<h2>Thanks "+name+"!</h2> You are all set to start Scouting. <a href='#' onclick='history.go(-1)'>Go back to my page.</a>";
+          content.innerHTML = "<h2>Thanks "+name+"!</h2> You are all set to start Scouting. <a style='color:blue' onclick='history.go(-1)'>Go back to my page.</a>";
         }
         else {
           sauceCreateError.innerHTML = "There was an error creating your account.";
