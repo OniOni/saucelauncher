@@ -3,12 +3,19 @@ var sauceURL = "https://saucelabs.com";
 var prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 var lastURL = "";
 
+var tweet = function() {
+  var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+                     .getService(Components.interfaces.nsIWindowMediator);
+  var mainWindow = wm.getMostRecentWindow("navigator:browser");
+  mainWindow.content.location = "http://twitter.com/share?url=https://addons.mozilla.org/en-US/firefox/addon/sauce-launcher/&via=saucelabs&text=You%20should%20check%20out%20Sauce%20Launcher,%20it's%20awesome!";
+};
+
 var prefPage = function() {
   var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
                      .getService(Components.interfaces.nsIWindowMediator);
   var mainWindow = wm.getMostRecentWindow("navigator:browser");
   mainWindow.content.location = "chrome://saucelauncher/content/saucePrefs.html";
-}
+};
 
 var go = function(os, browser, version) {
   var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
