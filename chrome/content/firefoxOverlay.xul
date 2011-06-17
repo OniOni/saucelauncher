@@ -4,6 +4,8 @@
 <overlay id="saucelauncherOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   
+  <script src="chrome://saucelauncher/content/saucelauncherinit.js" />
+  
   <menupopup id="viewSidebarMenu">
     <menuitem key="key_opensaucelauncher" observes="viewsaucelauncher"  />
   </menupopup>
