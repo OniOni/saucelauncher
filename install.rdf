@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>saucelauncher@saucelabs.com</em:id>
     <em:name>Sauce Launcher</em:name>
-    <em:version>0.3</em:version>
+    <em:version>0.4</em:version>
     <em:creator>Adam Christian</em:creator>
     <em:iconURL>chrome://saucelauncher/content/img/sauce-logo-small.png</em:iconURL>
     <em:description>Launch Sauce Scout sessions in any browser you want with a single click!</em:description>

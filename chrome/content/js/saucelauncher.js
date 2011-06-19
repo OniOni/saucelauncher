@@ -144,7 +144,6 @@ var createAccount = function() {
     var payObj = createPayLoad(["name", "email", "usernameCreate","password"]);
     payObj.username = payObj["usernameCreate"];
     payObj.token = "0E44EF6E-B170-4CA0-8264-78FD9E49E5CD";
-    alert(JSON.stringify(payObj));
     
     var url = sauceURL+"/rest/v1/users";
     var req = new XMLHttpRequest();
