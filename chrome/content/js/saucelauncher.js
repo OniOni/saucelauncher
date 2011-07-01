@@ -1,4 +1,3 @@
-//var sauceURL = "http://smcq.dev.saucelabs.com:5000";
 var sauceURL = "https://saucelabs.com";
 var prefManager = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 var lastURL = "";
@@ -57,7 +56,13 @@ var go = function(os, browser, version) {
           var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
                              .getService(Components.interfaces.nsIWindowMediator);
           var mainWindow = wm.getMostRecentWindow("navigator:browser");
-          var newTab = mainWindow.gBrowser.addTab(encodeURI(sauceURL+"/scout/live/"+rObj.task+"?auth_username="+account+"&auth_access_key="+api_key));
+          if (rObj.result == false) {
+            alert("You're out of Sauce Minutes, you should take a look at our monthly plans!");
+            mainWindow.content.location.href = "http://www.saucelabs.com/pricing";
+          }
+          else {
+            var newTab = mainWindow.gBrowser.addTab(encodeURI(sauceURL+"/scout/live/"+rObj.task+"?auth_username="+account+"&auth_access_key="+api_key));
+          }
         }
         else {
           alert(req.responseText);
@@ -95,7 +100,7 @@ var saveValues = function() {
       return;
     }
     else {
-      document.getElementById('sauceEnterError').innerHTML = "*Do you have available sauce minutes?";
+      document.getElementById('sauceEnterError').innerHTML = "*You're out of Sauce Minutes..<br><a href='http://www.saucelabs.com/pricing' style='cursor:pointer;color:blue;text-decoration:underline;'>See our available plans!</a>.";
       return;
     }
  }
